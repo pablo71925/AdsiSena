@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Texto (vertical-align)</title>
+  <style>
+    section {
+      display: table;
+      border: 2px solid #ccc;
+      padding: 10px;
+      margin: 20px auto;
+      width: 400px;
+    }
+    .vt { vertical-align: top; }
+    .vm { display: table-cell; vertical-align: middle; }
+    .vb { vertical-align: baseline; }
+  </style>
+</head>
+<body>
+  <h1>Texto (vertical-align)</h1>
+  <hr>
+  <section>
+    <img src="imgs/icon.png">
+    <span class="vt">Ayuda</span>
+  </section>
+  <section>
+    <img src="imgs/icon.png">
+    <span class="vm">Ayuda</span>
+  </section>
+  <section>
+    <img src="imgs/icon.png">
+    <span class="vb">Ayuda</span>
+  </section>
+</body>
+</html>

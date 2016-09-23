@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Métodos SET (jQuery)</title>
+</head>
+<body>
+	<h1>Métodos SET (jQuery)</h1>
+	<hr>
+	<article>
+		<p>
+			<input type="text" id="nombre" placeholder="Ingrese Nombre">
+		</p>
+		<h1 id="titulo">Bienvenido XYZ</h1>
+		<p id="texto">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolorum impedit, consectetur omnis incidunt similique minima inventore nesciunt sit, iure, debitis atque vel quidem eligendi. Nulla error, sit officia placeat.
+		</p>
+		<p>
+			<a href="http://www.google.com">Buscar Información</a>
+		</p>
+	</article>
+	<button id="btnSet"> Asignar Texto </button>
+	<button id="btnHtml"> Asignar HTML </button>
+	<button id="btnValue"> Asignar Valor </button>
+	<button id="btnAttr"> Asignar Atributo (href) </button>
+
+
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			// ---------------------
+			$('input').keyup(function(event) {
+				$('h1#titulo').text('Bienvenido '+$(this).val()); // SET / GET
+			});
+			// --------------------- text('texto')
+			$('#btnSet').click(function(event) {
+				$('#texto').text('Esto es un texto personalizado'); // SET
+			});
+			// --------------------- html()
+			$('#btnHtml').click(function(event) {
+				$('article').html('<ul><li>Rojo</li><li>Verde</li><li>Azul</li></ul>'); //SET
+			});
+			// --------------------- val()
+			$('#btnValue').click(function(event) {
+				$('input').val('ADSI'); // SET
+			});
+			// --------------------- val()
+			$('#btnAttr').click(function(event) {
+				$('a').attr('href', 'http://twitter.com'); // SET
+			});
+
+		});
+	</script>
+</body>
+</html>

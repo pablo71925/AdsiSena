@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tamaño de la imagen de fondo</title>
+  <style>
+    section {
+      border: 2px solid #666;
+      background: url(imgs/Goku_2015.png) no-repeat center center;
+      margin: 20px auto;
+    }
+    .bg1 {
+      background-size: 50%;
+      height: 200px;
+      width: 200px;
+    }
+    .bg2 {
+      background-size: cover;
+      height: 900px;
+      width: 900px;
+    }
+    .bg3 {
+      background-size: contain;
+      height: 400px;
+      width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tamaño de la imagen de fondo</h1>
+  <hr>
+  <section class="bg1">
+    <h3>background-size: 50%;</h3>
+  </section>
+  <section class="bg2">
+    <h3>background-size: cover;</h3>
+  </section>
+  <section class="bg3">
+    <h3>background-size: contain;</h3>
+  </section>
+
+</body>
+</html>

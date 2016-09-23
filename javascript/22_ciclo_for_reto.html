@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ciclo (for) Reto</title>
+</head>
+<body>
+	<h1>Ciclo (for) Reto</h1>
+	<hr>
+	<fieldset>
+		<legend><h3>Gráficar Tablas</h3></legend>
+		<input type="number" id="nf" placeholder="Número de Filas">
+		<input type="number" id="nc" placeholder="Número de Columnas">
+		<button id="graficar">Gráficar</button>
+	</fieldset>
+
+	<table border="1" id="tabla">
+		
+	</table>
+
+	<script>
+		var graficar = document.getElementById('graficar');
+		var tabla    = document.getElementById('tabla');
+
+		graficar.onclick = function() {
+			var nf = document.getElementById('nf').value;
+			var nc = document.getElementById('nc').value;
+			var contenido = '';
+	
+			for (var i = 0; i < nf; i++) {
+				contenido += '<tr>';
+				for (var j = 0; j < nc ; j++) {
+					contenido += '<td> f:'+i+' c:'+j+' </td>';
+				}
+				contenido += '</tr>';	
+			}
+			tabla.innerHTML = contenido;
+		}
+	</script>
+</body>
+</html>

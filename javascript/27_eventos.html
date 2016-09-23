@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos</title>
+</head>
+<body onload="eventoLoad();" 
+	  onmousewheel="eventoMouseWheel();">
+	<h1>Eventos</h1>
+	<hr>
+	<label>Campo de texto</label>
+	<br>
+	<input type="text" id="elemento" 
+	onclick="eventoClick();"
+	onchange="eventoChange();"
+	onkeydown="eventoKeyDown();"
+	onkeyup="eventoKeyUp();"
+	onkeypress="eventoKeyPress();"
+	onmouseenter="eventoMouseEnter();"
+	onmouseleave="eventoMouseLeave();"
+	onfocus="eventoFocus();"
+	onblur="eventoBlur();" 
+	>
+	<br>
+	<label>Eventos: </label>
+	<br>
+	<textarea id="salida" cols="40" rows="10"></textarea>
+
+	<script>
+		var salida = document.getElementById('salida');
+
+		function eventoLoad() {
+			salida.innerHTML += '>> Evento: onload \n';
+		}
+		function eventoMouseWheel() {
+			//salida.innerHTML += '>> Evento: onmousewheel \n';
+		}
+		function eventoClick() {
+			salida.innerHTML += '>> Evento: onclick \n';
+		}
+		function eventoChange() {
+			salida.innerHTML += '>> Evento: onchange \n';
+		}
+		function eventoKeyDown() {
+			salida.innerHTML += '>> Evento: onkeydown \n';
+		}
+		function eventoKeyUp() {
+			salida.innerHTML += '>> Evento: onkeyup \n';
+		}
+		function eventoKeyPress() {
+			salida.innerHTML += '>> Evento: onkeypress \n';
+		}
+		function eventoMouseEnter() {
+			salida.innerHTML += '>> Evento: onmouseenter \n';
+		}
+		function eventoMouseLeave() {
+			salida.innerHTML += '>> Evento: onmouseleave \n';
+		}
+		function eventoFocus() {
+			salida.innerHTML += '>> Evento: onfocus \n';
+		}
+		function eventoBlur() {
+			salida.innerHTML += '>> Evento: onblur \n';
+		}
+	</script>
+</body>
+</html>

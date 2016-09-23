@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tablas (Estructura)</title>
+	<style>
+		table {
+			border: 4px solid #1C2983;
+			border-collapse: collapse;
+			font: 1.2em Tahoma;
+		}
+		td, th {
+			border: 1px solid #1C2983;
+			padding: 20px;
+		}
+		th {
+			background-color: #1C2983;
+			color: #fff;
+		}
+		thead tr:first-child,
+		tfoot tr {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Tablas (Estructura)</h1>
+	<hr>
+	<table>
+		<thead>
+			<tr>
+				<td colspan="3">Datos Personales</td>
+			</tr>
+			<tr>
+				<th>Documento</th>
+				<th>Nombre</th>
+				<th>Edad</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>123</td>
+				<td>Jeremias Springfield</td>
+				<td>45</td>
+			</tr>
+			<tr>
+				<td>124</td>
+				<td>Homero Simpson</td>
+				<td>40</td>
+			</tr>
+			<tr>
+				<td>125</td>
+				<td>Edna Krabappel</td>
+				<td>36</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3"> Personajes Los Simpsons</td>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+</html>

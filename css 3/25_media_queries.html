@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Media Queries</title>
+	<style>
+		body {
+			font: 16px Tahoma;
+		}
+		section.page {
+			border: 10px solid #80A553;
+			padding: 20px;
+		}
+		section.page p {
+			text-align: justify;
+			line-height: 22px;
+		}
+
+		.res { display: none; }
+
+		@media (max-width: 1280px) {
+			section.page { background-color: #C0F87D; }
+			.res         { display: none; }
+			.res1280     { display: inline; }
+		}
+		@media (max-width: 1024px) {
+			section.page { background-color: #F8F393; }
+			.res         { display: none; }
+			.res1024     { display: inline; }
+		}
+		@media (max-width: 800px) {
+			section.page { background-color: #ACABF8; }
+			.res         { display: none; }
+			.res800      { display: inline; }
+		}
+		@media (max-width: 600px) {
+			section.page { background-color: #F8A7D3; }
+			.res         { display: none; }
+			.res600      { display: inline; }
+		}
+
+	</style>
+</head>
+<body>
+	<section class="page">
+		<h1>
+			Media Queries | Resolución Detectada: 
+			<span class='res res1280'> 1280px </span>
+			<span class='res res1024'> 1024px </span>
+			<span class='res res800'> 800px </span>
+			<span class='res res600'> 600px </span>
+		</h1>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis veniam, modi rem assumenda accusantium architecto! Est quaerat, architecto quas rerum illo itaque placeat dolores eius nam amet, recusandae, alias veritatis voluptatem ea pariatur repellendus temporibus dolore quae modi eos! Eligendi aut magnam, accusamus consequuntur? Aut fugit id, neque totam a obcaecati, voluptatem error repudiandae nesciunt quam odit sed asperiores libero, quos repellendus esse quisquam. Eum laboriosam labore fuga aliquam quos cumque officiis, ullam velit temporibus. Tempore asperiores amet, illo maiores est voluptates magnam impedit error dignissimos blanditiis repudiandae sunt animi esse obcaecati repellendus, voluptatibus quidem, officia corrupti. Reprehenderit incidunt iure consectetur est numquam voluptas illum alias, dolorum adipisci fugiat sapiente blanditiis, eaque nam ducimus, ut! Deserunt perferendis aperiam ducimus consectetur similique, obcaecati doloribus quas culpa illum animi saepe cum dicta! Sint asperiores dicta blanditiis ad, dolore magnam nihil amet incidunt totam rerum, quas aliquam, libero exercitationem in explicabo laudantium eaque enim! Molestias quod suscipit doloribus totam modi accusamus incidunt tenetur aperiam esse ab deleniti explicabo, et nemo, sequi voluptatum autem cupiditate illum eligendi rem excepturi architecto! Perspiciatis numquam, deleniti quasi consequatur dolore. Consectetur quos enim esse rerum blanditiis. Eligendi ea soluta expedita facilis enim quasi blanditiis odit. Commodi vitae, repellendus!
+		</p>
+	</section>
+</body>
+</html>

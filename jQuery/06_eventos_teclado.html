@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos de Teclado (jQuery)</title>
+</head>
+<body>
+	<h1>Eventos de Teclado (jQuery)</h1>
+	<hr>
+	<input type="text" id="itext">
+	<br>
+	<textarea id="resultados" cols="30" rows="10"></textarea>
+
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$content = '';
+			// KeyDown
+			$('#itext').keydown(function(event) {
+				$content += 'Evento: Tecla Abajo \n';
+				$('#resultados').text($content);
+			});
+			// KeyUp
+			$('#itext').keyup(function(event) {
+				$content += 'Evento: Tecla Arriba \n';
+				$('#resultados').text($content);
+			});
+			// KeyPress
+			$('#itext').keypress(function(event) {
+				$content += 'Evento: Tecla Presionada \n';
+				$('#resultados').text($content);
+			});
+		});
+	</script>
+</body>
+</html>

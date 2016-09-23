@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Selectores Básicos</title>
+	<style>
+		/* Selector Universal */
+		* {
+			color: gray;
+		}
+		/* Selector Tipo Etiqueta */
+		body {
+			font: 2em Tahoma;
+		}
+		/* Selector Descendente */
+		article p {
+			font-size: 1em;
+		}
+		/* Selector Clase */
+		h1.titulo {
+			border-bottom: 4px solid silver;
+		}
+		/* Selector Identificador */
+		article#info {
+			line-height: 2em;
+		}
+		/* Selector Combinado */
+		article#info h1.titulo {
+			margin-bottom: 1em;
+		}
+	</style>
+</head>
+<body>
+	<article id="info">
+		<h1 class="titulo">Selectores Básicos CSS</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ipsum dicta qui sed aliquid quasi tenetur blanditiis sapiente veritatis atque, assumenda, rem vero, laborum eveniet tempore. Repudiandae amet ab, distinctio.</p>
+	</article>
+</body>
+</html>

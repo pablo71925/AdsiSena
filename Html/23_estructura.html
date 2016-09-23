@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Estructura</title>
+	<style>
+		html { font-size: 62.5%; }
+		body {
+			background-color: #b3f6c6;
+			color: #4b6853;
+			font: 1.4rem sans-serif;
+			margin: 0px;
+		}
+		div.marco {
+			background-color: #fff;
+			border: 4px solid #4b6853;
+			margin: 0px auto;
+			padding: 10px;
+			width: 960px;
+		}
+		div.encabezado img {
+			height: 200px;
+			width: 960px;
+		}
+		ul.menu {
+			background-color: #4b6853;
+			list-style: none;
+			margin: 0px;
+			padding: 0px;
+			width: 960px;
+		}
+		ul.menu li {
+			display: inline-block;
+		}
+		ul.menu li a:link, 
+		ul.menu li a:visited {
+			color: #fff;
+			display: block;
+			padding: 10px;
+			margin-right: 20px;
+			text-decoration: none;
+		}
+		ul.menu li a:hover {
+			background-color: #fff;
+			color: #4b6853;
+		}
+		div.contenido {
+			margin: 10px 0px;
+		}
+		div.contenido img{
+			height: 250px;
+			width: 250px;
+		}
+		div.contenido img,
+		div.contenido p,
+		div.contenido form {
+			display: inline-block;
+			vertical-align: top;
+		}
+		div.contenido p {
+			margin: 0px 10px 0px 10px;
+			text-align: justify;
+			width: 400px;
+		}
+		div.contenido form {
+			width: 280px;
+		}
+		fieldset {
+			border: 2px solid #4b6853;
+			padding: 10px;
+		}
+		input, textarea {
+			border: 1px solid #4b6853;
+			width: 250px;
+		}
+		div.pie {
+			background-color: #4b6853;
+			color: #fff;
+			padding: 10px 0px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="marco">
+		<div class="encabezado">
+			<img src="imgs/dbz.jpg">
+		</div>
+		<ul class="menu">
+			<li><a href="">Inicio   </a></li>
+			<li><a href="">Nosotros </a></li>
+			<li><a href="">Servicios</a></li>
+			<li><a href="">Contacto </a></li>
+		</ul>
+		<div class="contenido">
+			<img src="imgs/log.png" height="176" width="286">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. At excepturi ab voluptatibus labore error nihil quia ad nesciunt possimus quae quis facilis, illo tenetur quasi sed eveniet alias commodi delectus.
+				<br>
+				<br>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. At excepturi ab voluptatibus labore error nihil quia ad nesciunt possimus quae quis facilis, illo tenetur quasi sed eveniet alias commodi delectus.
+				<br>
+				<br>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. At excepturi ab voluptatibus labore error nihil quia ad nesciunt possimus quae quis facilis, illo tenetur quasi sed eveniet alias commodi delectus.
+				<br>
+			</p>
+			<form action="" method="post">
+				<fieldset>
+					<legend>Datos Personales</legend>
+					<input type="text" name="nombre">
+					<input type="text" name="edad">
+					<textarea name="descripcion"></textarea>
+					<input type="submit" value="Enviar">
+				</fieldset>
+			</form>
+		</div>
+		<div class="pie">
+			<p>Todos los Derechos Reservados 2015</p>
+		</div>
+	</div>
+</body>
+</html>

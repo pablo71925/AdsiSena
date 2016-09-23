@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX (jQuery)</title>
+</head>
+<body>
+	<h1>AJAX (jQuery)</h1>
+	<hr>
+	<ol id="ciudades"></ol>
+
+	<button id="btnLoad">Cargar Datos</button>
+
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#btnLoad').click(function(event) {
+
+
+				$.ajax({
+					url: 'json/ciudades.json',
+					type: 'POST',
+					dataType: 'json'
+				})
+				.done(function(data) {
+					console.log("success");
+					$('ol#ciudades').empty();
+					$.each(data, function(index, val) {
+						console.log(val.nombre);
+						$('ol#ciudades').append('<li>'+val.nombre+'</li>');
+					});
+
+				})
+				.fail(function() {
+					console.log("error");
+				})
+				.always(function() {
+					console.log("complete");
+				});
+
+				
+			});
+		});
+	</script>
+</body>
+</html>

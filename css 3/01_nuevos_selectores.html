@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nuevos Selectores</title>
+  <style>
+    body { font: 18px Tahoma; }
+    fieldset {
+      border: 4px solid #7f979d;
+      padding: 20px;
+      margin: 20px auto;
+      width: 600px;
+    }
+    legend {
+      background-color: #7f979d;
+      color: #fff;
+    }
+    legend h1 {
+      padding: 4px 80px;
+    }
+    /* p~ul --------------------------------- */
+    p~ul {
+      background-color: #62a812;
+      color: #fff;
+    }
+    /* a[href^=https] --------------------------------- */
+    a[href^=https] {
+      background-color: #62a812;
+      color: #fff;
+      padding: 10px;
+    }
+    /* a[href$=pdf] --------------------------------- */
+    a[href$=pdf] {
+      background-color: #62a812;
+      color: #fff;
+      padding: 10px;
+    }
+    /* a[href*=google] --------------------------------- */
+    a[href*=google] {
+      background-color: #62a812;
+      color: #fff;
+      padding: 10px;
+    }
+    /* p:first-of-type --------------------------------- */
+    .fot p:first-of-type {
+      background-color: #62a812;
+      color: #fff;
+      padding: 10px;
+    }
+    /* p:last-of-type --------------------------------- */
+    .lot p:last-of-type {
+      background-color: #62a812;
+      color: #fff;
+      padding: 10px;
+    }
+    /* p:only-of-type --------------------------------- */
+    .oot p:only-of-type {
+      background-color: #62a812;
+      color: #fff;
+      padding: 10px;
+    }
+    /* p:only-child --------------------------------- */
+    .oc p:only-child {
+      background-color: #62a812;
+      color: #fff;
+      padding: 10px;
+    }
+    /* p:nth-child(3) --------------------------------- */
+    .nc p:nth-child(3) {
+      background-color: #62a812;
+      color: #fff;
+      padding: 10px;
+    }
+    /* p:nth-last-child(3) --------------------------------- */
+    .nlc p:nth-last-child(3) {
+      background-color: #62a812;
+      color: #fff;
+      padding: 10px;
+    }
+    /* :root ---------------------------------------------- */
+    :root {
+      background: -webkit-linear-gradient(left, #7f979d, #fff);
+    }
+    /* p:empty ------------------------------------------- */
+    .pe p:empty {
+      background-color: #62a812;
+      color: #fff;
+      padding: 20px;
+    }
+    /* #destino:target ------------------------------------------- */
+    nav a:link,
+    nav a:visited {
+      background-color: #62a812;
+      border: 2px solid #fff;
+      color: #fff;
+      margin: 0px 10px;
+      padding: 4px 8px;
+      text-decoration: none;
+    }
+    .idt p {
+      opacity: 0.5;
+      -webkit-transition: all 0.5s ease-in;
+    }
+    .idt p:target {
+      background-color: #62a812;
+      color: #fff;
+      opacity: 1;
+      padding: 20px;
+    }
+    /* input:enabled / input:disabled ----------------------------- */
+    .inped input {
+      display: block;
+      margin: 8px 0px;
+    }
+    .inped input:enabled {
+      border: 2px solid #62a812;
+      padding: 10px;
+    }
+    .inped input:disabled {
+      border: 2px solid #a82d12;
+      padding: 10px;
+    }
+    /* input:checked -------------------------------------------- */
+    .inpch input:checked {
+      -webkit-appearance: none;
+      background-color: #62a812;
+      border: 4px solid #fff;
+      padding: 4px;
+    }
+    /* :not(p) ------------------------------------------------- */
+    .notp :not(p) {
+      background-color: #62a812;
+      color: #fff;
+      padding: 20px;
+    }
+    /* ::selection --------------------------------------------- */
+    .slt .color1::selection {
+      background-color: #ff0;
+    }
+    .slt .color2::selection {
+      background-color: #00f;
+    }
+    .slt .color3::selection {
+      background-color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <h1>Nuevos Selectores</h1>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>p~ul</h1></legend>
+    <em>Selecciona todos los elementos 'ul' precedidos por un elemento 'p'</em>
+    <p>
+      <ul>
+        <li>Elemento</li>
+        <li>Elemento</li>
+        <ul>
+          <li>Elemento</li>
+          <li>Elemento</li>
+        </ul>
+      </ul>
+      <ul>
+        <li>Elemento</li>
+        <li>Elemento</li>
+      </ul>
+    </p>
+  </fieldset>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>a[href^=https]</h1></legend>
+    <em>
+      Selecciona todos los elementos 'a' cuyo valor
+      del atributo 'href' comienza con "https"
+    </em>
+    <br>
+    <br>
+    <a href="http://www.google.com">Google</a>
+    <a href="http://www.yahoo.com">Yahoo</a>
+    <a href="https://www.youtube.com">Youtube</a>
+    <a href="http://www.hotmail.com">Hotmail</a>
+    <a href="https://www.twitter.com">Twitter</a>
+  </fieldset>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>a[href$=pdf]</h1></legend>
+    <em>
+      Selecciona todos los elementos 'a' cuyo valor
+      del atributo 'href' termina con "pdf"
+    </em>
+    <br>
+    <br>
+    <a href="files/documento.pdf">Documento PDF</a>
+    <a href="files/archivo.docx">Archivo Word</a>
+    <a href="files/documento.txt">Documento Texto</a>
+    <a href="files/hoja.xls">Hoja de Cálculo</a>
+  </fieldset>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>a[href*=google]</h1></legend>
+    <em>
+      Selecciona todos los elementos 'a' cuyo valor
+      del atributo 'href' contiene la cadena "google"
+    </em>
+    <br>
+    <br>
+    <a href="http://www.yahoo.com">Yahoo</a>
+    <a href="http://www.google.com">Google</a>
+    <a href="http://www.youtube.com">Youtube</a>
+  </fieldset>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>p:first-of-type</h1></legend>
+    <em>
+      Selecciona el primer elemento 'p'
+    </em>
+    <br>
+    <br>
+    <section class="fot">
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+    </section>
+  </fieldset>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>p:last-of-type</h1></legend>
+    <em>
+      Selecciona el último elemento 'p'
+    </em>
+    <br>
+    <br>
+    <section class="lot">
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+    </section>
+  </fieldset>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>p:only-of-type</h1></legend>
+    <em>
+      Selecciona el único elemento 'p'
+    </em>
+    <br>
+    <br>
+    <section class="oot">
+      <div>Lorem ipsum dolor sit amet, consectetur.</div>
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      <div>Lorem ipsum dolor sit amet, consectetur.</div>
+    </section>
+  </fieldset>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>p:only-child</h1></legend>
+    <em>
+      Selecciona el único elemento hijo 'p',
+      no puede tener hermanos
+    </em>
+    <br>
+    <br>
+    <section class="oc">
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+    </section>
+  </fieldset>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>p:nth-child(3)</h1></legend>
+    <em>
+      Selecciona el tercer elemento 'p'
+    </em>
+    <br>
+    <br>
+    <section class="nc">
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+    </section>
+  </fieldset>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>p:nth-last-child(3)</h1></legend>
+    <em>
+      Selecciona el tercer elemento 'p' contando desde
+      el último elemento
+    </em>
+    <br>
+    <br>
+    <section class="nlc">
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+    </section>
+  </fieldset>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>:root</h1></legend>
+    <em>
+      Por favor, revisar el fondo del documento.
+    </em>
+  </fieldset>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>p:empty</h1></legend>
+    <em>
+      Selecciona el elemento 'p' que no contiene hijos ni texto.
+    </em>
+    <br>
+    <br>
+    <section class="pe">
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      <p></p>
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      <p></p>
+    </section>
+  </fieldset>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>#destino:target</h1></legend>
+    <em>
+      Selecciona el elemento que contiene el identificador 'destino',
+      al presionar un enlace que vincule dicho identificador.
+    </em>
+    <br>
+    <br>
+    <nav>
+      <a href="#destino1"> Destino 1 </a>
+      <a href="#destino2"> Destino 2 </a>
+      <a href="#destino3"> Destino 3 </a>
+    </nav>
+    <section class="idt">
+      <p id="destino1">Lorem ipsum dolor sit amet, consectetur.</p>
+      <p id="destino2">Lorem ipsum dolor sit amet, consectetur.</p>
+      <p id="destino3">Lorem ipsum dolor sit amet, consectetur.</p>
+    </section>
+  </fieldset>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>input:enabled / input:disabled</h1></legend>
+    <em>
+      input:enabled -> Selecciona los 'input' habilitados
+      <br>
+      input:disabled -> Selecciona los 'input' inhabilitados
+    </em>
+    <br>
+    <br>
+    <section class="inped">
+      <input type="text">
+      <input type="text" disabled="disabled">
+      <input type="text">
+      <input type="text" disabled>
+    </section>
+  </fieldset>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>input:checked</h1></legend>
+    <em>
+      Selecciona los 'input' marcados.
+    </em>
+    <br>
+    <br>
+    <section class="inpch">
+      <label><input type="checkbox" name="color">Amarillo</label>
+      <label><input type="checkbox" name="color" checked="checked">Azul</label>
+      <label><input type="checkbox" name="color">Rojo</label>
+      <label><input type="checkbox" name="color" checked>Verde</label>
+    </section>
+  </fieldset>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>:not(p)</h1></legend>
+    <em>
+      Selecciona los elementos que no son 'p'.
+    </em>
+    <br>
+    <br>
+    <section class="notp">
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+      <div>Lorem ipsum dolor sit amet, consectetur.</div>
+      <p>Lorem ipsum dolor sit amet, consectetur.</p>
+    </section>
+  </fieldset>
+  <!-- ============================== -->
+  <fieldset>
+    <legend><h1>::selection</h1></legend>
+    <em>
+      Color de la porcion de contenido seleccionado al dar click y
+      arrastrar sobre el documento.
+    </em>
+    <br>
+    <br>
+    <section class="slt">
+      <p class="color1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima aliquam modi, iure deleniti, blanditiis accusamus quaerat molestiae earum eaque est incidunt voluptates ad saepe at obcaecati quo sed, aliquid facere!
+      </p>
+      <p class="color2">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima aliquam modi, iure deleniti, blanditiis accusamus quaerat molestiae earum eaque est incidunt voluptates ad saepe at obcaecati quo sed, aliquid facere!
+      </p>
+      <p class="color3">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima aliquam modi, iure deleniti, blanditiis accusamus quaerat molestiae earum eaque est incidunt voluptates ad saepe at obcaecati quo sed, aliquid facere!
+      </p>
+    </section>
+  </fieldset>
+</body>
+</html>

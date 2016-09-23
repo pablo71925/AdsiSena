@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reto Funciones</title>
+	<style>
+		body {
+			font: 14px Arial;
+		}
+		fieldset {
+			border: 4px solid #eee;
+			margin: 50px auto;
+			padding: 10px;
+			width: 200px;
+		}
+		input, output, select, button {
+			display: block;
+			padding: 10px;
+			margin-bottom: 8px;
+			width: 180px;
+		}
+		button, select { width: 204px; }
+		output {
+			color: #72a14b;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<fieldset>
+		<legend><h2>Operaciones</h2></legend>
+		<input type="number" id="n1" placeholder="Número 1">
+		<input type="number" id="n2" placeholder="Número 2">
+		<select id="opc">
+			<option value="1">Sumar</option>
+			<option value="2">Restar</option>
+			<option value="3">Multiplicar</option>
+			<option value="4">Dividir</option>
+		</select>
+		<button onclick="calcular()">Calcular</button>
+		<output id="res"></output>
+	</fieldset>
+	<script>
+		// --------------------------------------------------
+		// Sumar
+		// --------------------------------------------------
+		function sumar(n1, n2) {
+			return parseInt(n1)+parseInt(n2);
+		}
+		// --------------------------------------------------
+		// Restar
+		// --------------------------------------------------
+		function restar(n1, n2) {
+			return n1-n2;
+		}
+		// --------------------------------------------------
+		// Multiplicar
+		// --------------------------------------------------
+		function multiplicar(n1, n2) {
+			return n1*n2;
+		}
+		// --------------------------------------------------
+		// Sumar
+		// --------------------------------------------------
+		function dividir(n1, n2) {
+			return n1/n2;
+		}
+		function calcular() {
+			var n1  = document.getElementById('n1').value;
+			var n2  = document.getElementById('n2').value;
+			var opc = document.getElementById('opc').value;
+
+			if(opc == 1) { res.innerHTML = "Suma es: "+sumar(n1, n2);                 }
+			if(opc == 2) { res.innerHTML = "Resta es: "+restar(n1, n2);               }
+			if(opc == 3) { res.innerHTML = "Multiplicacion es: "+multiplicar(n1, n2); }
+			if(opc == 4) { res.innerHTML = "Division es: "+dividir(n1, n2);           }
+		}
+	</script>
+</body>
+</html>

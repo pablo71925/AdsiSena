@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Selectores jQuery</title>
+	<style>
+		table.table {
+			border: 2px solid #6c9846;
+			border-collapse: collapse;
+			color: #537636;
+			font: 14px Tahoma;
+			margin: 20px auto;
+			width: 80%;
+		}
+		table.table td {
+			border: 1px solid #6c9846;
+			padding: 20px;
+		}
+		button {
+			border: none;
+			border-radius: 50px;
+			background-color: #3E5828;
+			color: #fff;
+			cursor: pointer;
+			font-size: 14px;
+			padding: 10px 40px;
+		}
+	</style>
+</head>
+<body>
+	
+	<table class="table">
+		<tr>
+			<td>Jeremias</td>
+			<td>Springfield</td>
+			<td>Calle 12</td>
+			<td>8 83 9898</td>
+		</tr>
+		<tr>
+			<td>Homero</td>
+			<td>Simpson</td>
+			<td>Calle Siempre Viva</td>
+			<td>8 82 8787</td>
+		</tr>
+		<tr>
+			<td>Marge</td>
+			<td>Simpson</td>
+			<td>Calle Siempre Viva</td>
+			<td>8 86 8787</td>
+		</tr>
+		<tr>
+			<td>Nelson</td>
+			<td>Munz</td>
+			<td>Cra 22-24</td>
+			<td>8 86 8787</td>
+		</tr>
+		<tr>
+			<td>Gomez</td>
+			<td>Simpson</td>
+			<td>Calle 00</td>
+			<td>8 80 8080</td>
+		</tr>
+		<tr>
+			<td colspan="4">
+				<button id="btFirst"> Eliminar Primero</button>
+				<button id="btLast"> Eliminar Último</button>
+			</td>
+		</tr>
+	</table>
+	
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('tr:even').css('background-color', '#dff5d3');
+
+			$('#btFirst').click(function(event) {
+				if($('tr').length > 1) {
+					$ft = $('.table tr:first');
+					$ft.css('background-color', '#fea8b1');
+					$ft.css('color', '#c02123');
+
+					setTimeout(function() {
+						$ft.remove();
+					},1000);
+				}
+			});
+
+			$('#btLast').click(function(event) {
+				if($('tr').length > 1) {
+					$lt = $('.table tr:last').prev();
+					$lt.css('background-color', '#fea8b1');
+					$lt.css('color', '#c02123');
+
+					setTimeout(function() {
+						$lt.remove();
+					},1000);
+				}
+			});
+
+		});
+	</script>
+</body>
+</html>

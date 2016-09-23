@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas</title>
+</head>
+<body>
+  <h1>Canvas</h1>
+  <hr>
+  <h3>Cuadrado:</h3>
+  <canvas id="cuadrado"></canvas>
+
+  <h3>Círculo:</h3>
+  <canvas id="circulo"></canvas>
+
+  <h3>Triángulo:</h3>
+  <canvas id="triangulo"></canvas>
+
+  <h3>Texto:</h3>
+  <canvas id="texto"></canvas>
+
+  <h3>Estrella:</h3>
+  <canvas id="estrella"></canvas>
+
+  <script>
+    var canvas1    = document.getElementById('cuadrado');
+    var canvas2    = document.getElementById('circulo');
+    var canvas3    = document.getElementById('triangulo');
+    var canvas4    = document.getElementById('texto');
+    var canvas5    = document.getElementById('estrella');
+
+    var ctx1       = canvas1.getContext('2d');
+    var ctx2       = canvas2.getContext('2d');
+    var ctx3       = canvas3.getContext('2d');
+    var ctx4       = canvas4.getContext('2d');
+    var ctx5       = canvas5.getContext('2d');
+
+    // Cuadrado ---------------------
+    ctx1.fillStyle = '#009';
+    ctx1.fillRect(0, 0, 150, 150);
+    // Círculo ----------------------
+    ctx2.fillStyle = '#090';
+    ctx2.beginPath();
+    ctx2.arc(60, 60, 60, 0, Math.PI*2, true);
+    ctx2.closePath();
+    ctx2.fill();
+    // Triángulo -------------------
+    ctx3.fillStyle = '#f70';
+    ctx3.beginPath();
+    ctx3.moveTo(10, 110);
+    ctx3.lineTo(110, 10);
+    ctx3.lineTo(210, 110);
+    ctx3.fill();
+    // Recuadro con Texto
+    ctx4.fillStyle = '#906';
+    ctx4.font = "60px Tahoma";
+    ctx4.fillText("ADSI", 20, 80);
+    ctx4.rect(0, 0 , 200, 120);
+    ctx4.stroke();
+    // Estrella
+    ctx5.fillStyle = '#f00';
+		ctx5.translate(50, 100);
+		ctx5.rotate((Math.PI * 1 / 10));
+		for (var i = 5; i--;) {
+		    ctx5.lineTo(0, 50);
+		    ctx5.translate(0, 50);
+		    ctx5.rotate((Math.PI * 2 / 10));
+		    ctx5.lineTo(0, -50);
+		    ctx5.translate(0, -50);
+		    ctx5.rotate(-(Math.PI * 6 / 10));
+		}
+		ctx5.lineTo(0, 50);
+		ctx5.fill();
+		ctx5.stroke();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Efectos (Animate) (jQuery)</title>
+	<style>
+		section.circle {
+			background: -webkit-linear-gradient(#9b2031, #3c783b);
+			border-radius: 100px;
+			box-shadow: 2px 2px 10px 4px #000;
+			position: relative;
+			left: 0px;
+			height: 200px;
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Efectos (Animate) (jQuery)</h1>
+	<hr>
+	<section class="circle"></section>
+
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.circle').animate({
+				left: '800px'},
+				1000, function() {
+				$('.circle').animate({
+					top: '300px'},
+					1000, function() {
+					$('.circle').animate({
+						left: '0px'},
+						1000, function() {
+						$('.circle').animate({top: '0px'}, 1000);
+					});
+				});
+			});
+		});
+
+	</script>
+</body>
+</html>

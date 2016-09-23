@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Transiciones</title>
+	<style>
+		img.tran1 {
+			-webkit-transition: all 0.5s ease-in;
+		}
+		img.tran1:hover {
+			cursor: pointer;
+			-webkit-transform: rotateY(160deg) scale(1.2);
+		}
+		nav {
+			background-color: #663594;
+			color: #4B276D;
+			font-family: Tahoma;
+			font-size: 1.6em;
+			padding: 20px;
+			position: relative;
+			left: -600px;
+			width: 600px;
+			-webkit-transition: all 0.5s ease-out;
+		}
+		nav:hover {
+			left: 0px;
+		}
+		nav:hover h4 {
+			opacity: 0;
+		}
+		nav h4 {
+			color: #fff;
+			margin: 0px;
+			position: relative;
+			top: 100px; left: 490px;
+			width: 200px;
+			-webkit-transform: rotate(-90deg);
+		}
+		nav li {
+			background-color: #fff;
+			padding: 20px;
+			margin: 4px;
+			width: 200px;
+			-webkit-transition: all 0.2s ease-in-out;
+		}
+		nav li:hover {
+			cursor: pointer;
+			width: 550px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Transiciones</h1>
+
+	<img class="tran1" src="imgs/logointer.png">
+	<hr>
+	<nav>
+		<h4>Menu</h4>
+		<li>Inicio</li>
+		<li>Nosotros</li>
+		<li>Servicios</li>
+		<li>Contacto</li>
+	</nav>
+
+</body>
+</html>

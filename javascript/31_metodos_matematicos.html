@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Métodos Matemáticos</title>
+</head>
+<body>
+	<h1>Métodos Matemáticos</h1>
+	<hr>
+	<ul id="mostrar"></ul>
+	<script>
+		var mostrar = document.getElementById('mostrar');
+		var contend = '';
+		// Random (Número Aleatorio)
+		var ran = parseInt(Math.random()*100)+1;
+		contend += "<li>El número aleatorio es: "+ran+"</li>";
+
+		// Número Máximo
+		var max = Math.max(20, 80, 10, 5);
+		contend += "<li>El número máximo es: "+max+"</li>";
+
+		// Número Mímimo
+		var min = Math.min(20, 80, 10, 5);
+		contend += "<li>El número mínimo es: "+min+"</li>";
+
+		// Redondear Aproximado
+		var rnd = Math.round(3.2);
+		contend += "<li>El número 3,2 redondeado es: "+rnd+"</li>";
+
+		// Redondear por Arriba
+		var cel = Math.ceil(3.8);
+		contend += "<li>El número 3,8 redondeado por arriba es: "+cel+"</li>";
+
+		// Redondear por Abajo
+		var flo = Math.floor(3.8);
+		contend += "<li>El número 3,8 redondeado por abajo es: "+flo+"</li>";
+
+		// Potencia
+		var pot = Math.pow(3,3);
+		contend += "<li>El número 3 elevado a la 3 es: "+pot+"</li>";
+
+		// Valor Absoluto
+		var abo = Math.abs(-50);
+		contend += "<li>El valor absoluto de -50 es: "+abo+"</li>";
+
+		mostrar.innerHTML = contend;
+		
+
+
+
+	</script>
+</body>
+</html>

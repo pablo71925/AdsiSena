@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Métodos Fechas</title>
+</head>
+<body>
+	<h1>Métodos Fechas</h1>
+	<hr>
+	<ul id="mostrar"></ul>
+	<script>
+		var mostrar = document.getElementById('mostrar');
+		var conten  = '';
+		// GET (Obtener)
+		conten += "<li> <h2> GET </h2></li>";
+		var fecha = new Date();
+		conten += "<li> El número del día en el mes es: "+fecha.getDate()+"</li>";
+
+		conten += "<li> El año es: "+fecha.getFullYear()+"</li>";
+
+		conten += "<li> El número del día en la semana es: "+fecha.getDay()+"</li>";
+
+		conten += "<li> El número del mes es: "+(fecha.getMonth()+1)+"</li>";
+
+		conten += "<li> El número de minutos es: "+fecha.getMinutes()+"</li>";
+
+		// SET (Asignar)
+		conten += "<li> <h2> SET </h2></li>";
+
+		var fecha2 = new Date();
+		fecha2.setDate(30);
+		conten += "<li> El número del día en el mes es: "+fecha2.getDate()+"</li>";
+
+		fecha2.setFullYear(2020);
+		conten += "<li> El año es: "+fecha2.getFullYear()+"</li>";
+
+		fecha2.setMonth(11);
+		conten += "<li> El número del mes es: "+(fecha2.getMonth()+1)+"</li>";
+
+		fecha2.setMinutes(30);
+		conten += "<li> El número de minutos es: "+fecha2.getMinutes()+"</li>";
+
+		mostrar.innerHTML = conten;
+
+	</script>
+</body>
+</html>

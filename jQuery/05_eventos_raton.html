@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos de Ratón (jQuery)</title>
+</head>
+<body>
+	<h1>Eventos de Ratón (jQuery)</h1>
+	<hr>
+	<button id="btnEventos"> BOTON </button>
+	<br>
+	<textarea id="resultados" cols="30" rows="10"></textarea>
+
+
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$content = '';
+			// Click
+			$('#btnEventos').click(function(event) {
+				$content += 'Evento: Click \n';
+				$('#resultados').text($content);
+			});
+			// Doble Click
+			$('#btnEventos').dblclick(function(event) {
+				$content += 'Evento: Doble Click \n';
+				$('#resultados').text($content);
+			});
+			// Mouse Enter
+			$('#btnEventos').mouseenter(function(event) {
+				$content += 'Evento: Cursor Encima \n';
+				$('#resultados').text($content);
+			});
+			// Mouse Leave
+			$('#btnEventos').mouseleave(function(event) {
+				$content += 'Evento: Cursor Afuera \n';
+				$('#resultados').text($content);
+			});
+		});
+	</script>
+</body>
+</html>

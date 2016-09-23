@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos Ventana (jQuery)</title>
+</head>
+<body>
+	<h1>Eventos Ventana (jQuery)</h1>
+	<hr>
+	<div id="carga"></div>
+	<button id="btnLoad">Cargar Menú</button>
+
+	<br><br>
+	<textarea id="resultados" cols="30" rows="10"></textarea>
+
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			$content = '';
+			
+			// Load (No funciona en Google Chrome)
+			// Ponerlo en un servidor (local/remoto)
+			$('#btnLoad').click(function(event) {
+				$('#carga').load('menu.html');
+			});
+
+			// Unload
+			$(window).unload(function(event) {
+  				console.log('Usted recargo la página...');
+			});
+
+			// Resize
+			$(window).resize(function(event) {
+  				$content += 'Evento: Cambio el tamaño de la ventada \n';
+				$('#resultados').text($content);
+			});
+
+			// Scroll
+			$(window).scroll(function(event) {
+  				$content += 'Evento: Se ha realizado scroll \n';
+				$('#resultados').text($content);
+			});
+
+		});
+	</script>
+</body>
+</html>

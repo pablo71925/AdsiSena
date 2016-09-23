@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Visualización (z-index)</title>
+  <style>
+    main {
+      margin: 50px auto;
+      width: 500px;
+    }
+    section {
+      border: 2px solid #999;
+      height: 200px;
+      position: relative;
+      width: 350px;
+    }
+    #c1 {
+      background-color: #666;
+      top: 0px; left: 0px;
+      z-index: 1;
+    }
+    #c2 {
+      background-color: #999;
+      top: -100px; left: 100px;
+      z-index: 2;
+    }
+    #c3 {
+      background-color: #ccc;
+      top: -200px; left: 200px;
+      z-index: 3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Visualización (z-index)</h1>
+  <hr>
+  <main>
+    <section id="c1">1</section>
+    <section id="c2">2</section>
+    <section id="c3">3</section>
+  </main>
+</body>
+</html>

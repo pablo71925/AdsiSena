@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos de Formulario (jQuery)</title>
+</head>
+<body>
+	<h1>Eventos de Formulario (jQuery)</h1>
+	<hr>
+	<form action="" method="post">
+		<input type="text" id="itext" placeholder="Nombre Completo">
+		<input type="button" value="Enviar">
+	</form>
+	
+	<br>
+	<textarea id="resultados" cols="30" rows="10"></textarea>
+
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$content = '';
+			// Submit
+			$('input[type=button]').click(function(event) {
+				$('form').submit();
+			});
+			// Focus
+			$('#itext').focus(function(event) {
+				$content += 'Evento: Campo Activado \n';
+				$('#resultados').text($content);
+			});
+			// Blur
+			$('#itext').blur(function(event) {
+				$content += 'Evento: Campo Inactivo \n';
+				$('#resultados').text($content);
+			});
+			// Change
+			$('#itext').change(function(event) {
+				$content += 'Evento: Campo ha Cambiado \n';
+				$('#resultados').text($content);
+			});
+		});
+	</script>
+</body>
+</html>

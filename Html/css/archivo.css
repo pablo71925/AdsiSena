@@ -1,0 +1,28 @@
+
+h1 {
+	background-color: #5b1b9d;
+	border-radius: 50px;
+	color: #fff;
+	font: 2.5em Tahoma;
+	padding: 20px;
+	margin: 100px auto;
+	text-align: center;
+	width: 600px;
+
+	-webkit-animation: 2s animTitulo ease-in-out infinite;
+}
+
+@-webkit-keyframes animTitulo {
+	0% { 
+		opacity: 0.5;
+		-webkit-transform: scale(1); 
+	}
+	50% { 
+		opacity: 1;
+		-webkit-transform: scale(1.2); 
+	}
+	100% { 
+		opacity: 0.5;
+		-webkit-transform: scale(1); 
+	}
+}

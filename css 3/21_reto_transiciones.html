@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reto Transiciones</title>
+	<style>
+		main{
+			background-color: #ddd;
+			padding: 100px 0px;
+			width: 600px;
+			margin: 0px auto;
+		}
+		section.ball {
+			border: 10px solid #2E3E6D;
+			border-radius: 50%;
+			background-color: #4C68B5;
+			position: relative;
+			margin: 0px auto;
+			height: 50px;
+			width: 50px;
+			-webkit-transition: background-color 1s,
+								border-width 1s 1s,
+			                    transform 1s 2s,
+			                    left 1s 3s,
+			                    border-color 1s 3s;
+		}
+		main:hover section {
+			background-color: #B53D9B;
+			border-color: #B53D9B;
+			border-width: 50px;
+			left: 200px;
+			-webkit-transform: rotateY(-160deg);
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<section class="ball"></section>
+	</main>
+</body>
+</html>

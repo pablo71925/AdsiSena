@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Posicionamiento Absoluto</title>
+  <style>
+    section.cajas {
+      border: 2px solid #222;
+      padding: 20px;
+      margin: 20px auto;
+      width: 800px;
+    }
+    article.caja {
+      background-color: #fff;
+      border: 2px solid #555;
+      height: 100px;
+      margin: 20px;
+    }
+    article.pequena {
+      display: inline-block;
+      width: 220px;
+    }
+    article.caja2 {
+      border: 2px dotted #666;
+      position: absolute;
+      top: 180px; left: 700px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Posicionamiento Absoluto</h1>
+  <hr>
+  <section class="cajas">
+      <article class="caja pequena">Caja 1</article>
+      <article class="caja caja2 pequena">Caja 2</article>
+      <article class="caja pequena">Caja 3</article>
+      <article class="caja">Caja 4</article>
+  </section>
+</body>
+</html>

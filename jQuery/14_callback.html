@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Callback (jQuery)</title>
+</head>
+<body>
+	<h1>Callback (jQuery)</h1>
+	<hr>
+	<article>
+		<h1>Lorem Ipsum Dolor</h1>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates sit soluta, eum voluptas dolore esse aperiam, rem rerum consequuntur quaerat delectus consectetur ullam molestias enim harum? Cum temporibus amet, odit.
+		</p>
+	</article>
+
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('body').fadeOut(2000, function() {
+				
+				if(confirm('Quiere ver la página de nuevo ?')) {
+					$(this).slideDown(function() {
+						alert('La página aparecio!');
+					});
+				}
+			});
+		});
+	</script>
+</body>
+</html>

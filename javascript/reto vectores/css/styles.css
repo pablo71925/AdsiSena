@@ -1,0 +1,158 @@
+
+body {
+	background-color: #f3d570;
+}
+
+section#main {
+	background: #f3d570 url(../imgs/bg.png) no-repeat center center;
+	height: 480px;
+	margin: 20px auto;
+	width: 798px;
+}
+
+div.left,
+div.right {
+	display: inline-block;
+	vertical-align: top;
+	width: 350px;
+}
+div.left {
+	margin: 90px 10px 0px 40px;
+}
+
+nav.pokemons {
+	margin: 0px auto;
+	width: 266px;
+}
+
+nav.pokemons li {
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: inline-block;
+	list-style: none;
+	height: 86px;
+	width: 86px;
+	-webkit-filter: grayscale(1);
+	   -moz-filter: grayscale(1);
+
+	-webkit-transition: all 0.2s ease-in;
+	   -moz-transition: all 0.2s ease-in;
+}
+
+nav.pokemons li:hover,
+nav.pokemons li.active {
+	cursor: pointer;
+	-webkit-filter: grayscale(0);
+	   -moz-filter: grayscale(0);
+
+	-webkit-transform: scale(1.1);
+	   -moz-transform: scale(1.1);
+}
+
+nav.pokemons li#pk1 { background-image: url(../imgs/pk01.png); }
+nav.pokemons li#pk2 { background-image: url(../imgs/pk02.png); }
+nav.pokemons li#pk3 { background-image: url(../imgs/pk03.png); }
+nav.pokemons li#pk4 { background-image: url(../imgs/pk04.png); }
+nav.pokemons li#pk5 { background-image: url(../imgs/pk05.png); }
+nav.pokemons li#pk6 { background-image: url(../imgs/pk06.png); }
+
+nav.add,
+nav.delete {
+	margin: 44px auto 0px auto;
+	width: 220px;
+}
+
+nav.add button,
+nav.delete button {
+	border: none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 36px;
+	width: 106px;
+
+	-webkit-transition: all 0.2s ease-in;
+	   -moz-transition: all 0.2s ease-in;
+}
+
+nav.add button:hover,
+nav.delete button:hover {
+	cursor: pointer;
+
+	-webkit-transform: scale(1.05);
+	   -moz-transform: scale(1.05);
+}
+
+button#add-first { background-image: url(../imgs/add-btn-first.png); }
+button#add-last  { background-image: url(../imgs/add-btn-last.png);  }
+
+button#del-first { background-image: url(../imgs/delete-btn-first.png); }
+button#del-last  { background-image: url(../imgs/delete-btn-last.png);  }
+
+
+nav#list {
+	height: 340px;
+	margin: 90px auto 0px auto;
+	overflow: auto;
+	width: 200px;
+}
+
+nav#list li {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center center;
+	list-style: none;
+	height: 98px;
+	margin: 4px auto;
+	width: 98px;
+
+	-webkit-animation: 0.5s animList ease-in-out 1;
+	   -moz-animation: 0.5s animList ease-in-out 1;
+}
+
+nav#list li.pk1 { background-image: url(../imgs/pkb01.png); }
+nav#list li.pk2 { background-image: url(../imgs/pkb02.png); }
+nav#list li.pk3 { background-image: url(../imgs/pkb03.png); }
+nav#list li.pk4 { background-image: url(../imgs/pkb04.png); }
+nav#list li.pk5 { background-image: url(../imgs/pkb05.png); }
+nav#list li.pk6 { background-image: url(../imgs/pkb06.png); }
+
+
+@-webkit-keyframes animList {
+	0%  { 
+		opacity: 0;
+		-webkit-transform: scale(0.2); 
+	}
+	80% { 
+		opacity: 0.8;
+		-webkit-transform: scale(1.1); 
+	}
+	90% { 
+		opacity: 0.8;
+		-webkit-transform: scale(0.8); 
+	}
+	100% { 
+		opacity: 1;
+		-webkit-transform: scale(1); 
+	}
+}
+
+@-moz-keyframes animList {
+	0%  { 
+		opacity: 0;
+		-moz-transform: scale(0.2); 
+	}
+	80% { 
+		opacity: 0.8;
+		-moz-transform: scale(1.1); 
+	}
+	90% { 
+		opacity: 0.8;
+		-moz-transform: scale(0.8); 
+	}
+	100% { 
+		opacity: 1;
+		-moz-transform: scale(1); 
+	}
+}
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Animacion (Carro)</title>
+	<style>
+		.carro {
+			margin: 100px 0px;
+			position: relative;
+			-webkit-animation: animCarro 6s infinite;
+		}
+		.chasis {
+			background: transparent url(imgs/carro.png) no-repeat;
+			height: 236px;
+			position: relative;
+			width: 455px;
+			-webkit-animation: animChasis 0.5s infinite;
+		}
+		.llanta {
+			background: transparent url(imgs/llanta.png) no-repeat;
+			display: inline-block;
+			height: 92px;
+			position: relative;
+			top: -46px;
+			width: 92px;
+			-webkit-animation: animLlanta 1s linear infinite;
+		}
+		.llanta1 { left: 55px; }
+		.llanta2 { left: 220px; }
+
+		@-webkit-keyframes animChasis {
+			0%, 100% { top: 0px;   }
+			50%      { top: -10px; }
+		}
+		@-webkit-keyframes animLlanta {
+			0%   { -webkit-transform: rotate(0deg);   }
+			100% { -webkit-transform: rotate(360deg); }
+		}
+		@-webkit-keyframes animCarro {
+			0%   { left: 0px;    -webkit-transform: rotateY(0deg);   }
+			50%  { left: 700px;  -webkit-transform: rotateY(0deg);   }
+			51%  { left: 0px;    -webkit-transform: rotateY(160deg); }
+			99%  { left: -700px; -webkit-transform: rotateY(160deg); }
+			100% { left: -700px; -webkit-transform: rotateY(0deg);   }
+		}
+	</style>
+</head>
+<body>
+	<section class="carro">
+		<div class="chasis"></div>
+		<div class="llanta llanta1"></div>
+		<div class="llanta llanta2"></div>
+	</section>
+</body>
+</html>

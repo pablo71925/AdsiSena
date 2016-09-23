@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Métodos Números</title>
+</head>
+<body>
+	<h1>Métodos Números</h1>
+	<hr>
+	<ul id="salida"></ul>
+
+	<script>
+		var salida = document.getElementById('salida');
+		var numero = 2.2894;
+		// Convertir a Cadena
+		salida.innerHTML += '<li> Cadena: '+numero.toString()+'</li>';
+		// Reparar
+		salida.innerHTML += '<li> Reparado: '+numero.toFixed(0)+'</li>';
+		// Precisión
+		salida.innerHTML += '<li> Precisión: '+numero.toPrecision(3)+'</li>';
+		// Entero
+		salida.innerHTML += '<li> Entero: '+parseInt(numero)+'</li>';
+		// Flotante
+		salida.innerHTML += '<li> Flotante: '+parseFloat(numero)+'</li>';
+	</script>
+</body>
+</html>

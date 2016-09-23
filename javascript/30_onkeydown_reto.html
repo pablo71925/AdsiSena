@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reto (onkeydown)</title>
+	<style>
+		html { height: 100%; }
+		body {
+			background: url(imgs/garden.png) no-repeat center center;
+			background-size: cover;
+			overflow: hidden;
+		}
+		section#modal {
+			background-color: rgba(255,255,255,0.7);
+			height: 100%;
+			position: fixed;
+			top: 0px; left: 0px;
+			width: 100%;
+			z-index: 9;
+		}
+		section#modal button {
+			border: none;
+			background-color: #6d9a47;
+			color: #fff;
+			font-size: 1.6em;
+			text-transform: uppercase;
+			display: block;
+			margin: 25% auto;
+			padding: 20px 60px;
+			-webkit-transition: 0.2s ease-in;
+		}
+		section#modal button:hover {
+			background-color: #5b803b;
+			cursor: pointer;
+			-webkit-transform: scale(1.2);
+		}
+		img#character {
+			display: block;
+			margin: 380px auto 0px auto;
+			position: relative;
+			-webkit-transition: 0.2s ease-in-out;
+		}
+		img#lefto {
+			display: block;
+			margin: 0px auto;
+			position: relative;
+			-webkit-transition: 0.2s ease-in-out;
+			-webkit-animation: 0.4s moveFood ease-in-out infinite;
+		}
+
+		span#timer {
+			display: block;
+			font-size: 14em;
+			font-family: Tahoma;
+			color: rgba(0,0,0,0.4);
+			position: fixed;
+			top: -40px; left: 0px;
+		}
+
+		.moveUp { -webkit-animation: 0.2s moveUp ease-in 1; }
+
+		@-webkit-keyframes moveUp {
+			0%, 100% {
+				-webkit-transform: translateY(0px) scale(1);
+			}
+			50% {
+				-webkit-transform: translateY(-80px) scale(1.2);
+			}
+		}
+		@-webkit-keyframes moveFood {
+			0%, 100% {
+				-webkit-transform: scale(1);
+				opacity: 1;
+			}
+			50% {
+				-webkit-transform: scale(2);
+				opacity: 0.8;
+			}
+		}
+	</style>
+</head>
+<body id="body">
+	<section id="modal">
+		<button id="playgame">Jugar</button>
+	</section>
+	<span id="timer">60</span>
+	<img id="character" src="imgs/hawk.png">
+	<img id="lefto"     src="imgs/leftovers.png">
+
+	<script>
+		var body  = document.getElementById('body');
+		var modal = document.getElementById('modal');
+		var pgame = document.getElementById('playgame');
+		var chrt  = document.getElementById('character');
+		var lefto = document.getElementById('lefto');
+		var timer = document.getElementById('timer');
+		// ---------------------------------------------
+		var vx = 0;
+		var vy = 0;
+
+		var ax =[-420,-360,-300,-240,-180,-120,-60,0,60,120,180,240,300,360,420];
+		var ay =[-360,-300,-240,-180,-120,-60,0,60,120];
+
+		pgame.onclick = function() {
+			countDown();
+			randLefto();
+			moveKeys();
+			modal.style.display = 'none';
+		}
+
+		function randLefto() {
+			setInterval(function() {
+				var rax = ax[Math.floor(Math.random()*ax.length)];
+				var ray = ay[Math.floor(Math.random()*ay.length)];
+
+				lefto.style.top  = ray+'px';
+				lefto.style.left = rax+'px';
+			}, 2000);	
+		}
+
+		function moveKeys() {
+			body.onkeydown = function(evt) {
+				var code = evt.keyCode;
+				//console.log(code);
+				switch(code) {
+					case 38: // Arriba
+						if(vy >= -340) {
+							vy -= 60;
+							chrt.style.top = vy+'px';
+						}
+						break;
+					case 39: // Derecha
+						if (vx <= 520) {
+							vx += 60;
+							chrt.style.left = vx+'px';
+							chrt.style.webkitTransform = 'rotateY(0deg)';
+						}
+						break;
+					case 40: // Abajo
+						if(vy <= 120) {
+							vy += 60;
+							chrt.style.top = vy+'px';
+						}
+						break;
+					case 37: // Inzquierda
+						if (vx >= -520) {
+							vx -= 60;
+							chrt.style.left = vx+'px';
+							chrt.style.webkitTransform = 'rotateY(160deg)';
+						}
+						break;	
+					case 32: // Espaciadora
+						chrt.classList.remove('moveUp');
+						chrt.offsetWidth = chrt.offsetWidth;
+						chrt.classList.add('moveUp');
+						break;		
+				}
+			}
+		}
+
+		function countDown() {
+			var cont = 59;
+			var cd = setInterval(function() {
+				timer.innerHTML = cont;
+				if(cont == 0) {
+					clearInterval(cd);
+					window.location.replace('30_onkeydown_reto.html');
+				} else {
+					cont--;
+				}
+
+			}, 1000);
+		}
+	</script>
+</body>
+</html>

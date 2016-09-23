@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Efectos (Animate) (jQuery)</title>
+	<style>
+		h1#count {
+			height: 200px;
+			margin: 20px auto;
+			font: 10em Tahoma;
+			position: relative;
+			opacity: 0;
+			text-align: center;
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Efectos (Animate) (jQuery)</h1>
+	<hr>
+	<h1 id="count"> 0 </h1>
+
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			
+			$count = 0;
+			$si = setInterval(function() {
+				$('#count').text($count)
+						   .animate({
+						   	opacity: 1,
+						   	width: '200px',
+						   	height: '200px'},
+						   	500, function() {
+						   	$('#count').animate({
+						   		opacity: 0,
+						   		width: '20px',
+						   		height: '20px'}, 500)
+						   });
+				$count++;
+			},1000);
+		});
+	</script>
+</body>
+</html>

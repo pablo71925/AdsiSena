@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Media Queries (Imagenes)</title>
+	<style>
+		body { background-color: #013575; }
+		section.page {
+			background: url(imgs/pepsi01.png) no-repeat center center;
+			height: 354px;
+			margin: 20px auto;
+			width: 919px;
+			-webkit-transition: all 0.5s ease-in-out;
+		}
+		@media (max-width: 926px) {
+			section.page {
+				background: url(imgs/pepsi02.png) no-repeat center center;
+				height: 370px;
+				margin: 20px auto;
+				width: 348px;
+			}
+		}
+		@media (max-width: 510px) {
+			section.page {
+				background: url(imgs/pepsi03.png) no-repeat center center;
+				height: 156px;
+				margin: 20px auto;
+				width: 162px;
+			}
+		}
+
+	
+
+	</style>
+</head>
+<body>
+	<section class="page">
+
+	</section>
+</body>
+</html>

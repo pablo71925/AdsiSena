@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ciclo (for / in)</title>
+</head>
+<body>
+	<h1>Ciclo (for / in)</h1>
+	<hr>
+	<ul id="datos"></ul>
+
+	<script>
+		var datos = document.getElementById('datos');
+		var persona = { nombre:    'Clementina',
+					    apellido:  'Lopez',
+					    telefono:  320111222,
+					    direccion: 'Calle 23-24' 
+					  };
+		for(var dato in persona) {
+			datos.innerHTML += "<li>"+persona[dato]+"</li>";
+		}
+	</script>
+</body>
+</html>

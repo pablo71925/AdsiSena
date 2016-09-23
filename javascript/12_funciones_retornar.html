@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Funciones (Retornar)</title>
+</head>
+<body>
+	<h1>Funciones (Retornar)</h1>
+	<ul id="salida"></ul>
+
+	<script>
+		var salida = document.getElementById('salida');
+		function producto(n1, n2) {
+			return parseInt(n1)*parseInt(n2);
+		}
+		salida.innerHTML += "<li> El producto es: "+producto(5, 4)+"</li>";
+		salida.innerHTML += "<li> El producto es: "+producto(100, 50)+"</li>";
+		salida.innerHTML += "<li> El producto es: "+producto(-5, -60)+"</li>";
+		salida.innerHTML += "<li> El producto es: "+producto(-60, 80)+"</li>";
+		salida.innerHTML += "<li> El producto es: "+producto(3, 8)+"</li>";
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ciclo (do/while)</title>
+</head>
+<body>
+	<h1>Ciclo (do/while)</h1>
+	<hr>
+	<fieldset>
+		<legend><h3>Números Pares</h3></legend>
+		<input type="number" id="num" placeholder="Ingrese un Número">
+		<button id="btn">Mostrar</button>
+	</fieldset>
+	<ul id="list"></ul>
+	<script>
+		var list = document.getElementById('list');
+		var btn  = document.getElementById('btn');
+		btn.onclick = function() {
+			var num = document.getElementById('num').value;
+			var i   = 0;
+			var cnt = '';
+			do {
+				if(i % 2 == 0) {
+					cnt += '<li>'+i+'</li>';
+				}
+				i++;
+			} while(i <= num);
+			list.innerHTML = cnt;
+		}
+	</script>
+</body>
+</html>

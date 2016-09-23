@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reto (setInterval)</title>
+	<style>
+		h2 {
+			font: 6em Tahoma;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Reto (setInterval)</h1>
+	<hr>
+	<h2 id="tiempo"></h2>
+	<script>
+		var tiempo = document.getElementById('tiempo');
+		var tm = parseInt(prompt("Ingrese el tiempo en segundos!"));
+
+		var si = setInterval(function() {
+			tiempo.innerHTML = tm;
+			if(tm == 0) {
+				clearInterval(si);
+			} else {
+				tm--;
+			}
+		},100);
+	</script>
+</body>
+</html>

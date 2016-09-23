@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Goku SS3</title>
+	<style>
+	main{
+		border: 10px solid #000;
+		height: 200px;
+		margin:50px auto;
+		width: 400px;
+
+	}
+	h1{
+		background-color: #000;
+		color: #fff;
+		font: 2em Arial;
+		margin: 0px;
+		padding: 4px 0px;
+		text-align: center;
+	}
+	section#constructor {
+		border: 1px solid #ddd;
+		background-image: url(imgs/dbzsprite.png);
+		width: 70px;
+		height: 90px;
+		margin: 40px auto;
+	}
+	.constructor1 {background-position: 0px    0px;}
+	.constructor2 {background-position: -60px  0px;}
+	.constructor3 {background-position: -120px 0px;}
+	.constructor4 {background-position: -180px 0px;}
+	.constructor5 {background-position: -240px 0px;}
+	.constructor6 {background-position: -300px 0px;}
+	.constructor7 { background-position: -360px 0px; }
+    .constructor8  { background-position: -420px 0px; }
+    .constructor9  { background-position: -480px 0px; }
+    .constructor10 { background-position: -540px 0px; }
+    .constructor11 { background-position: -600px 0px; }
+
+    .constructor12 {background-position: 0px    -0px;}
+	.constructor13 {background-position: -60px  -0px;}
+	.constructor14 {background-position: -120px -0px;}
+	.constructor15 {background-position: -180px -0px;}
+	.constructor16 {background-position: -240px -0px;}
+	.constructor17 {background-position: -300px -70px;}
+	.constructor18 { background-position:-360px  -70px; }
+    .constructor19 { background-position:-420px  -70px; }
+    .constructor20 { background-position:-480px -70px; }
+    .constructor21 { background-position: -540px -70px; }
+    .constructor22 { background-position: -600px -70px; }
+
+
+    .constructor23 { background-position:  0px    -135px;}
+    .constructor24 { background-position: -60px  -135px; }
+    .constructor25 { background-position: -120px -135px; }
+    .constructor26 { background-position: -180px -135px; }
+    .constructor27 { background-position: -240px -135px; }
+    .constructor28 { background-position: -320px -135px; }
+    .constructor29 { background-position: -380px -135px; }
+    .constructor30 { background-position: -440px -135px; }
+    .constructor31 { background-position: -500px -135px; }
+    .constructor32 { background-position: -560px -135px; }
+    .constructor33 { background-position: -620px -135px; }
+
+    .constructor34 { background-position: -0px -180px; }
+    .constructor35 { background-position: -80px    -180px; }
+    .constructor36 { background-position: -160px  -180px; }
+    .constructor37 { background-position: -240px -180px; }
+    .constructor38 { background-position: -320px -180px; }
+    .constructor39 { background-position: -400px -180px; }
+    .constructor40 { background-position: -480px -180px; }
+    .constructor41 { background-position: -560px    -180px; }
+    .constructor42 { background-position: -640px  -180px; }
+    .constructor43 { background-position: -720px -180px; }
+    .constructor44 { background-position: -800px -180px; }
+
+    .constructor45 { background-position: -0px -260px; }
+    .constructor46 { background-position: -80px    -260px; }
+    .constructor47 { background-position: -160px  -260px; }
+    .constructor48 { background-position: -240px -260px; }
+    .constructor49 { background-position: -320px -260px; }
+    .constructor50 { background-position: -400px -260px; }
+    .constructor51 { background-position: -480px -260px; }
+    .constructor52 { background-position: -560px  -260px; }
+    .constructor53 { background-position: -640px  -260px; }
+    .constructor54 { background-position: -720px -260px; }
+    .constructor55 { background-position: -800px -260px; }
+
+    .constructor56 { background-position: -0px -340px; }
+    .constructor57 { background-position: -80px    -340px; }
+    .constructor58 { background-position: -160px  -340px; }
+    .constructor59 { background-position: -240px -340px; }
+    .constructor60 { background-position: -320px -340px; }
+    .constructor61 { background-position: -400px -340px; }
+    .constructor62 { background-position: -480px -340px; }
+    .constructor63 { background-position: -560px    -340px; }
+    .constructor64 { background-position: -640px  -340px; }
+    .constructor65 { background-position: -720px -340px; }
+    .constructor66 { background-position: -800px -340px; }
+
+
+	
+	</style>
+</head>
+<body>
+	<main>
+	<h1>constructor</h1>
+	<section id="constructor" class="constructor"></section>
+	</main>
+	<script>
+	var sprite = document.getElementById('constructor');
+	var num = 1;
+	setInterval(function() {
+		if  (num > 66) {
+			sprite.classList.remove('constructor66'+num);
+			sprite.classList.add('constructor1'+num);
+			num = 1;
+		} else {
+			sprite.classList.remove('constructor'+num);
+			++num;
+			sprite.classList.add('constructor'+num);
+		}
+	},250);
+	</script>
+</body>
+</html>

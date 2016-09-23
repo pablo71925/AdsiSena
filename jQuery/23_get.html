@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax GET (jQuery)</title>
+</head>
+<body>
+	<h1>Ajax GET (jQuery)</h1>
+	<hr>
+
+	<select name="marcas" id="marcas">
+		<option value="">Seleccione...</option>
+		<option value="1">Volkswagen</option>
+		<option value="2">Renault</option>
+		<option value="3">Chevrolet</option>
+	</select>
+	<select name="referencia" id="referencia">
+	</select>
+
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			$('#referencia').attr('disabled', 'disabled');
+			// -----------------------------
+			$(document).on('change', '#marcas', function(event) {
+				event.preventDefault();
+				$marca = $(this).val();
+				if($marca.length > 0) {
+
+					$.get('referencias.php', { marca: $marca}, function(data) {
+						$('#referencia').removeAttr('disabled');
+						$('#referencia').html(data);
+					});
+
+				}
+			});
+
+		});
+	</script>
+</body>
+</html>

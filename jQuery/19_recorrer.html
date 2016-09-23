@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Recorrer el DOM (jQuery)</title>
+	<style>
+		html {
+			font-size: 62.5%;
+		}
+		body {
+			font-size: 1.6rem;
+			font-family: Tahoma;
+		}
+		ul.menu {
+			list-style: none;
+			margin: 20px auto;
+			padding: 0px;
+			width: 300px;
+		}
+		ul.menu li {
+			background-color: #bbb;
+			border-radius: 50px;
+			color: #666;
+			margin-bottom: 2px;
+			padding: 10px;
+			text-indent: 20px;
+		}
+		ul.menu li.active {
+			background-color: #666;
+			color: #fff;
+			-webkit-animation: 0.4s animActive ease-in 1;
+		}
+		div.controls {
+			margin: 0px auto;
+			width: 300px;
+		}
+		button {
+			border: none;
+			border-radius: 50px;
+			background-color: #458946;
+			color: #fff;
+			font-size: 2.4rem;
+			margin-right: 10px;
+			width: 60px;
+		}
+		button:hover {
+			background-color: #346835;
+			color: #ffd24f;
+			cursor: pointer;
+		}
+		@-webkit-keyframes animActive {
+			0% {
+				-webkit-transform: translateX(0px);
+			}
+			80% {
+				-webkit-transform: translateX(20px);
+			}
+			100% {
+				-webkit-transform: translateX(0px);
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1>Recorrer el DOM (jQuery)</h1>
+	<hr>
+	<ul class="menu">
+		<li>Inicio</li>
+		<li>Nosotros</li>
+		<li>Portafolio</li>
+		<li>Servicios</li>
+		<li>Contacto</li>
+	</ul>
+	<div class="controls">
+		<button id="btnFirst">&laquo;</button>
+		<button id="btnPrev">&lsaquo;</button>
+		<button id="btnNext">&rsaquo;</button>
+		<button id="btnLast">&raquo;</button>
+	</div>
+
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$active = undefined;
+			// -------------------------------------
+			$('#btnFirst').click(function(event) {
+				$active = $('ul.menu li').first();
+				$('ul.menu li').removeAttr('class');
+				$active.attr('class', 'active');
+			});
+			// -------------------------------------
+			$('#btnLast').click(function(event) {
+				$active = $('ul.menu li').last();
+				$('ul.menu li').removeAttr('class');
+				$active.attr('class', 'active');
+			});
+			// -------------------------------------
+			$('#btnNext').click(function(event) {
+
+				$active = $active.next();
+				if($('ul.menu li:last').hasClass('active')) {
+					$active = $('ul.menu li').last();
+				}
+				$('ul.menu li').removeAttr('class');
+				$active.attr('class', 'active');
+				
+			});
+			// -------------------------------------
+			$('#btnPrev').click(function(event) {
+				$active = $active.prev();
+				if($('ul.menu li:first').hasClass('active')) {
+					$active = $('ul.menu li').first();
+				}
+				$('ul.menu li').removeAttr('class');
+				$active.attr('class', 'active');
+			});
+			
+			
+		});
+	</script>
+</body>
+</html>
